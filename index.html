@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garmin | Recovery Reality Check</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101820;
+  color: white;
+}
+header {
+  background: #080d12;
+  padding: 22px;
+  text-align: center;
+  border-bottom: 2px solid #00b5e2;
+}
+header h1 { margin: 0; letter-spacing: 3px; }
+header p { color: #00b5e2; margin-bottom: 0; }
+.container {
+  max-width: 600px;
+  margin: 35px auto;
+  padding: 20px;
+}
+.card {
+  background: #1c2935;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+h2 { margin-top: 0; }
+.score {
+  font-size: 65px;
+  font-weight: bold;
+  color: #00d4a0;
+  text-align: center;
+}
+.subtext {
+  text-align: center;
+  color: #a9b8c5;
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 20px;
+}
+.stats strong {
+  display: block;
+  font-size: 23px;
+  color: #00b5e2;
+}
+.question { color: #a9b8c5; }
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+button {
+  flex: 1;
+  padding: 14px;
+  background: #2d4050;
+  color: white;
+  border: 1px solid #456071;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 15px;
+}
+button:hover { background: #00b5e2; color: #101820; }
+button.selected {
+  background: #00b5e2;
+  color: #101820;
+  font-weight: bold;
+}
+.main-button {
+  width: 100%;
+  background: #00b5e2;
+  color: #101820;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.result {
+  display: none;
+  border-left: 4px solid #00d4a0;
+}
+.result p {
+  line-height: 1.6;
+  color: #d0dce5;
+}
+footer {
+  text-align: center;
+  color: #8495a3;
+  font-size: 12px;
+  padding: 25px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>GARMIN</h1>
+  <p>RECOVERY REALITY CHECK</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Today's Recovery</h2>
+    <div class="score">82</div>
+    <p class="subtext">Your device says you're well recovered.</p>
+
+    <div class="stats">
+      <div>
+        <strong>78</strong>
+        Body Battery
+      </div>
+      <div>
+        <strong>54</strong>
+        HRV Status
+      </div>
+      <div>
+        <strong>7h 48m</strong>
+        Sleep
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>How Do You Actually Feel?</h2>
+    <p class="question">
+      Sometimes your body tells you something
+      different than your wearable.
+      Tell us how you're feeling today.
+    </p>
+
+    <div class="buttons">
+      <button onclick="selectFeeling('Great', this)">
+        Great
+      </button>
+      <button onclick="selectFeeling('Okay', this)">
+        Okay
+      </button>
+      <button onclick="selectFeeling('Exhausted', this)">
+        Exhausted
+      </button>
+    </div>
+
+    <button class="main-button" onclick="checkRecovery()">
+      Check My Recovery
+    </button>
+  </div>
+
+  <div class="card result" id="result">
+    <h2 id="resultTitle"></h2>
+    <p id="resultText"></p>
+  </div>
+
+</div>
+
+<footer>
+  Garmin Feature Concept | Student Prototype
+  <p>Demo data only. Not affiliated with Garmin.</p>
+</footer>
+
+<script>
+let feeling = "";
+
+function selectFeeling(value, button) {
+  feeling = value;
+
+  const buttons = document.querySelectorAll(".buttons button");
+  buttons.forEach(btn => btn.classList.remove("selected"));
+
+  button.classList.add("selected");
+}
+
+function checkRecovery() {
+  const result = document.getElementById("result");
+  const title = document.getElementById("resultTitle");
+  const text = document.getElementById("resultText");
+
+  result.style.display = "block";
+
+  if (feeling === "") {
+    title.innerText = "Select How You Feel";
+    text.innerText = "Choose a feeling before checking your recovery.";
+    return;
+  }
+
+  if (feeling === "Great") {
+    title.innerText = "Your Recovery Matches!";
+    text.innerText =
+      "Your Garmin recovery score and personal feedback align. " +
+      "You may be ready for your planned workout.";
+  }
+
+  if (feeling === "Okay") {
+    title.innerText = "Slight Recovery Mismatch";
+    text.innerText =
+      "Your Garmin score suggests strong recovery, but you feel " +
+      "only okay. Consider a moderate workout and monitor " +
+      "how your body responds.";
+  }
+
+  if (feeling === "Exhausted") {
+    title.innerText = "Recovery Mismatch Detected";
+    text.innerText =
+      "Your wearable reports strong recovery, but your " +
+      "personal feedback suggests otherwise. Consider " +
+      "reducing training intensity or taking a recovery day.";
+  }
+}
+</script>
+
+</body>
+</html>
