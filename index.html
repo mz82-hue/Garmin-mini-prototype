@@ -111,16 +111,34 @@ footer {
   <p>RECOVERY REALITY CHECK</p>
 </header>
 
-<div class="container">
+<div ="container">
 
-  <div class="card">
+  <div ="card">
     <h2>Today's Recovery</h2>
 
-    <div class="score">82</div>
+    <div ="score">82</div>
 
-    <p class="subtext">
-      Your device says you're well recovered.
-    </p>
+   
+<button onclick="checkRecovery()" style="
+  width: 100%;
+  background: #00b5e2;
+  color: #101820;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+">
+  Check My Recovery
+</button>
+
+<script>
+function checkRecovery() {
+  alert("Your Garmin recovery score is 82! Your device suggests you are well recovered today.");
+}
+</script>
 
     <div class="stats">
       <div>
