@@ -95,6 +95,23 @@ h2 {
   border-radius: 9px;
 }
 
+.recovery-button {
+  width: 100%;
+  background: #00b5e2;
+  color: #101820;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.recovery-button:hover {
+  background: #00d4a0;
+}
+
 footer {
   text-align: center;
   color: #8495a3;
@@ -111,34 +128,16 @@ footer {
   <p>RECOVERY REALITY CHECK</p>
 </header>
 
-<div ="container">
+<div class="container">
 
-  <div ="card">
+  <div class="card">
     <h2>Today's Recovery</h2>
 
-    <div ="score">82</div>
+    <div class="score">82</div>
 
-   
-<button onclick="checkRecovery()" style="
-  width: 100%;
-  background: #00b5e2;
-  color: #101820;
-  padding: 15px;
-  border: none;
-  border-radius: 9px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-">
-  Check My Recovery
-</button>
-
-<script>
-function checkRecovery() {
-  alert("Your Garmin recovery score is 82! Your device suggests you are well recovered today.");
-}
-</script>
+    <p class="subtext">
+      Your device says you're well recovered.
+    </p>
 
     <div class="stats">
       <div>
@@ -173,9 +172,10 @@ function checkRecovery() {
       <div class="feeling">Exhausted</div>
     </div>
 
-    <p class="subtext">
-      Personal recovery check-in coming soon.
-    </p>
+    <button class="recovery-button" onclick="checkRecovery()">
+      Check My Recovery
+    </button>
+
   </div>
 
 </div>
@@ -184,6 +184,15 @@ function checkRecovery() {
   Garmin Feature Concept | Student Prototype
   <p>Demo data only. Not affiliated with Garmin.</p>
 </footer>
+
+<script>
+function checkRecovery() {
+  alert(
+    "Your Garmin recovery score is 82! " +
+    "Your device suggests you are well recovered today."
+  );
+}
+</script>
 
 </body>
 </html>
