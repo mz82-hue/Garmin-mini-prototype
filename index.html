@@ -2,197 +2,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garmin | Recovery Reality Check</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garmin | Recovery Reality Check</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #101820;
-  color: white;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #101820;
+      color: white;
+    }
 
-header {
-  background: #080d12;
-  padding: 25px;
-  text-align: center;
-  border-bottom: 2px solid #00b5e2;
-}
+    header {
+      background-color: #080d12;
+      padding: 25px;
+      text-align: center;
+      border-bottom: 2px solid #00b5e2;
+    }
 
-header h1 {
-  margin: 0;
-  letter-spacing: 3px;
-}
+    header h1 {
+      margin: 0;
+      letter-spacing: 3px;
+      font-size: 34px;
+    }
 
-header p {
-  color: #00b5e2;
-}
+    header p {
+      color: #00b5e2;
+      margin-top: 15px;
+    }
 
-.container {
-  max-width: 600px;
-  margin: 35px auto;
-  padding: 20px;
-}
+    .container {
+      max-width: 600px;
+      margin: 35px auto;
+      padding: 20px;
+    }
 
-.card {
-  background: #1c2935;
-  border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 20px;
-}
+    .card {
+      background-color: #1c2935;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
 
-h2 {
-  margin-top: 0;
-}
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
 
-.score {
-  font-size: 65px;
-  font-weight: bold;
-  color: #00d4a0;
-  text-align: center;
-}
+    .score {
+      font-size: 65px;
+      font-weight: bold;
+      color: #00d4a0;
+      text-align: center;
+      margin: 20px 0;
+    }
 
-.subtext {
-  text-align: center;
-  color: #a9b8c5;
-}
+    .subtext {
+      text-align: center;
+      color: #a9b8c5;
+      line-height: 1.5;
+    }
 
-.stats {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  gap: 15px;
-}
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-.stats strong {
-  display: block;
-  font-size: 23px;
-  color: #00b5e2;
-}
+    .stats strong {
+      display: block;
+      font-size: 23px;
+      color: #00b5e2;
+      margin-bottom: 5px;
+    }
 
-.question {
-  color: #a9b8c5;
-  line-height: 1.6;
-}
+    .question {
+      color: #a9b8c5;
+      line-height: 1.6;
+    }
 
-.feelings {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
+    .feelings {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-.feeling {
-  flex: 1;
-  background: #2d4050;
-  padding: 15px 5px;
-  text-align: center;
-  border-radius: 9px;
-}
+    .feeling {
+      flex: 1;
+      min-width: 0;
+      background-color: #2d4050;
+      padding: 15px 5px;
+      text-align: center;
+      border-radius: 9px;
+    }
 
-.recovery-button {
-  width: 100%;
-  background: #00b5e2;
-  color: #101820;
-  padding: 15px;
-  border: none;
-  border-radius: 9px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-}
+    .recovery-button {
+      display: block;
+      width: 100%;
+      background-color: #00b5e2;
+      color: #101820;
+      padding: 15px;
+      border: none;
+      border-radius: 9px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
 
-.recovery-button:hover {
-  background: #00d4a0;
-}
+    .recovery-button:hover {
+      background-color: #00d4a0;
+    }
 
-footer {
-  text-align: center;
-  color: #8495a3;
-  font-size: 12px;
-  padding: 25px;
-}
-</style>
+    footer {
+      text-align: center;
+      color: #8495a3;
+      font-size: 12px;
+      padding: 25px;
+    }
+
+    @media (max-width: 450px) {
+      .container {
+        margin: 15px auto;
+        padding: 15px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .stats {
+        gap: 8px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>GARMIN</h1>
-  <p>RECOVERY REALITY CHECK</p>
-</header>
+  <header>
+    <h1>GARMIN</h1>
+    <p>RECOVERY REALITY CHECK</p>
+  </header>
 
-<div class="container">
+  <main class="container">
 
-  <div class="card">
-    <h2>Today's Recovery</h2>
+    <section class="card">
 
-    <div class="score">82</div>
+      <h2>Today's Recovery</h2>
 
-    <p class="subtext">
-      Your device says you're well recovered.
-    </p>
+      <div class="score">82</div>
 
-    <div class="stats">
-      <div>
-        <strong>78</strong>
-        Body Battery
+      <p class="subtext">
+        Your device says you're well recovered.
+      </p>
+
+      <div class="stats">
+
+        <div>
+          <strong>78</strong>
+          Body Battery
+        </div>
+
+        <div>
+          <strong>54</strong>
+          HRV Status
+        </div>
+
+        <div>
+          <strong>7h 48m</strong>
+          Sleep
+        </div>
+
       </div>
 
-      <div>
-        <strong>54</strong>
-        HRV Status
+    </section>
+
+    <section class="card">
+
+      <h2>How Do You Actually Feel?</h2>
+
+      <p class="question">
+        Sometimes your body tells you something
+        different than your wearable.
+        Compare how you feel with your recovery data.
+      </p>
+
+      <div class="feelings">
+        <div class="feeling">Great</div>
+        <div class="feeling">Okay</div>
+        <div class="feeling">Exhausted</div>
       </div>
 
-      <div>
-        <strong>7h 48m</strong>
-        Sleep
-      </div>
-    </div>
-  </div>
+      <button
+        type="button"
+        class="recovery-button"
+        onclick="checkRecovery()"
+      >
+        Check My Recovery
+      </button>
 
-  <div class="card">
-    <h2>How Do You Actually Feel?</h2>
+    </section>
 
-    <p class="question">
-      Sometimes your body tells you something
-      different than your wearable.
-      Compare how you feel with your recovery data.
-    </p>
+  </main>
 
-    <div class="feelings">
-      <div class="feeling">Great</div>
-      <div class="feeling">Okay</div>
-      <div class="feeling">Exhausted</div>
-    </div>
+  <footer>
+    Garmin Feature Concept | Student Prototype
+    <p>Demo data only. Not affiliated with Garmin.</p>
+  </footer>
 
-    <button class="recovery-button" onclick="checkRecovery()">
-      Check My Recovery
-    </button>
-
-  </div>
-
-</div>
-
-<footer>
-  Garmin Feature Concept | Student Prototype
-  <p>Demo data only. Not affiliated with Garmin.</p>
-</footer>
-
-<script>
-function checkRecovery() {
-  alert(
-    "Your Garmin recovery score is 82! " +
-    "Your device suggests you are well recovered today."
-  );
-}
-</script>
+  <script>
+    function checkRecovery() {
+      alert(
+        "Your Garmin recovery score is 82! " +
+        "Your device suggests you are well recovered today."
+      );
+    }
+  </script>
 
 </body>
 </html>
